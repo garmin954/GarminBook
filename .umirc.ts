@@ -21,5 +21,6 @@ export default defineConfig({
       path: 'https://github.com/garmin954/GarminBook',
     },
   ],
+  locales:[['zh-CN', '中文']]
   // more config: https://d.umijs.org/config
 });

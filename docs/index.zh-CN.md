@@ -2,8 +2,8 @@
 title: dumi - 为组件开发场景而生的文档工具
 order: 10
 hero:
-  title: dumi
-  desc: 📖 为组件开发场景而生的文档工具
+  title: Garmin Doc
+  desc: 📖 学习文档
   actions:
     - text: 快速上手
       link: /zh-CN/components/foo
@@ -26,26 +26,32 @@ features:
   - icon: https://gw.alipayobjects.com/zos/bmw-prod/f093e060-726e-471c-a53e-e988ed3f560c/kj9t9sk7_w144_h144.png
     title: 资产数据化能力
     desc: 一行命令将组件资产数据化，标准化的资产数据可与下游生产力工具串联
-footer: Open-source MIT Licensed | Copyright © 2019-present<br />Powered by self
+footer: Open-source MIT Licensed | Copyright © 2022-present<br />Powered by self
 ---
 
-## 轻松上手
+[comment]: <> (## 轻松上手)
 
-手动创建第一篇文档
+[comment]: <> (手动创建第一篇文档)
 
-```bash
-// 创建组件开发的目录
-$ mkdir library && cd library
+[comment]: <> (```bash)
 
-// 安装 dumi
-$ npm i dumi
+[comment]: <> (// 创建组件开发的目录)
 
-// 创建文档
-$ mkdir docs && echo '# Hello dumi!' > docs/index.md
+[comment]: <> ($ mkdir library && cd library)
 
-// 预览文档
-$ npx dumi dev
-```
+[comment]: <> (// 安装 dumi)
+
+[comment]: <> ($ npm i dumi)
+
+[comment]: <> (// 创建文档)
+
+[comment]: <> ($ mkdir docs && echo '# Hello dumi!' > docs/index.md)
+
+[comment]: <> (// 预览文档)
+
+[comment]: <> ($ npx dumi dev)
+
+[comment]: <> (```)
 
 [comment]: <> (## 反馈与共建)
 
