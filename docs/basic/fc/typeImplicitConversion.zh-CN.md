@@ -12,16 +12,10 @@ group:
 ---
 ### 类型
 -- **基础类型**
-* number
-* string
-* null
-* undefined
-* symbol
-* bigint
+* number, string, null, undefined, symbol, bigint
 
 -- **引用类型**
-* array
-* object _（function, arguments...）_
+* array, object _（function, arguments...）_
 
 ### 类型转换
 > 需要注意点的
@@ -46,7 +40,7 @@ group:
 
 **ToPrimitive**
 > 隐式转换实际上执行了 `ToPrimitive` 规则：
-1. 当 obj[Symbol.toPrimitive](preferredType) 方法存在时，优先调用该方法；
+1. 当 obj\[Symbol.toPrimitive\](preferredType) 方法存在时，优先调用该方法；
 2. 如果 preferredType 参数为 String，则依次尝试 obj.toString() 与 obj.valueOf() ；
 3. 如果 preferredType 参数为 Number 或者默认值，则依次尝试 obj.valueOf() 与 obj.toString() 。
 而 [Symbol.toPrimitive] 方法的签名为：
