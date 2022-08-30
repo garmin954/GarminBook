@@ -110,13 +110,13 @@ class GmPromise {
   }
 }
 
-function test() {
-  return new Promise((resolve, reject) => {
-    resolve('ok');
-  });
-}
-test().then(res => {
-  setTimeout(() => {
-    console.log(res);
-  });
-});
+// function test() {
+//   return new Promise((resolve, reject) => {
+//     resolve('ok');
+//   });
+// }
+// test().then(res => {
+//   setTimeout(() => {
+//     console.log(res);
+//   });
+// });
