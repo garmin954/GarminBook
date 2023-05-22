@@ -1,11 +1,11 @@
 ---
 title: React类型
-  nav:
-  path: /react
-  title: 类型
-  order: 100
+nav:
+  path: /frame
+  title: 框架工具
+  order: 10
 group:
-  path: /react/type
+  path: /frame/react
   title: React
   order: 100
 

@@ -1,7 +1,11 @@
 ---
 title: 介绍
 nav:
-  path: /react
+  path: /frame
+  title: 框架工具
+  order: 10
+group:
+  path: /frame/react
   title: React
   order: 10
 ---

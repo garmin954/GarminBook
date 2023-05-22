@@ -1,11 +1,11 @@
 ---
 title: 第三方插件
-  nav:
-  path: /react
-  title: React
-  order: 100
+nav:
+  path: /frame
+  title: 框架工具
+  order: 10
 group:
-  path: /react/packages
+  path: /frame/react
   title: React
   order: 100
 ---

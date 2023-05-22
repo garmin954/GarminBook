@@ -1,11 +1,11 @@
 ---
 title: 介绍
 nav:
-  path: /vue
-  title: Vue
+  path: /frame
+  title: 框架工具
   order: 10
 group:
-  path: /vue/css
+  path: /frame/vue
   title: AntDesign
   order: 100
 ---

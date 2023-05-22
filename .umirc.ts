@@ -24,7 +24,16 @@ export default defineConfig({
   locales: [['zh-CN', '中文']],
   // more config: https://d.umijs.org/config
   chainWebpack(config: any) {
+    console.log(config);
     config.plugin('windicss').use(WindiCSSWebpackPlugin);
   },
   sass: {}, ///配这里
+  themeConfig: {
+    menu: {
+      // 折叠菜单
+      collapse: true,
+      // 菜单类型
+      type: 'inline',
+    },
+  },
 });
