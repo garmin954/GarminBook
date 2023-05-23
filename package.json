@@ -5,9 +5,9 @@
   "license": "MIT",
   "scripts": {
     "build": "dumi build",
-    "deploy": "gh-pages -d dist ",
     "dev": "dumi dev",
     "prepare": "husky install && dumi setup",
+    "publish": "gh-pages -d dist ",
     "start": "npm run dev"
   },
   "commitlint": {

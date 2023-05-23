@@ -24,6 +24,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "D:\\node\\GarminBook\\node_modules\\prettier",
+    "ts.external.directory.path": "D:\\apply\\WebStorm 2022.3.4\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -36,6 +38,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684833999366</updated>
       <workItem from="1684834000894" duration="14000" />
+      <workItem from="1684837570980" duration="162000" />
     </task>
     <servers />
   </component>
