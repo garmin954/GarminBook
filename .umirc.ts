@@ -13,7 +13,7 @@ export default defineConfig({
   hash: true,
   // Because of using GitHub Pages
   base: `/`,
-  publicPath: `/`,
+  publicPath: `/GarminBook/`,
   navs: [
     null,
     {
