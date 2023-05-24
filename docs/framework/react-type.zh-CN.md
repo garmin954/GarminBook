@@ -8,23 +8,22 @@ group:
   path: /frame/react
   title: React
   order: 100
-
 ---
 
 ```react
 // 类型集合，主要用途是用来做动态标签使用，最终生成 element
 React.ElementType;
 ```
-**ref类型**
+
+**ref 类型**
+
 ```
-const mRef = ref<HTMLDivElement>() 
+const mRef = ref<HTMLDivElement>()
 React.MutableRefObject<HTMLDivElement>
 ```
 
 ```tsx
-import { Foo } from '/src/'
-import React from 'react';
+import { Foo } from '/src/';
 
-export default () => <Foo/>;
-
+export default () => <Foo />;
 ```

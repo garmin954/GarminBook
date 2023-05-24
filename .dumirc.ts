@@ -5,5 +5,6 @@ export default defineConfig({
   publicPath: `/GarminBook/`,
   themeConfig: {
     name: 'GarminBook',
+    footer:false
   },
 });

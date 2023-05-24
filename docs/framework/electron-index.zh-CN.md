@@ -12,23 +12,28 @@ group:
 ---
 
 ## 配置
-> `electron-forge`  是一个强大的 Electron 应用程序开发框架，可以帮助开发者更快速、更简单地创建、构建和打包 Electron 应用程序 
+
+> `electron-forge` 是一个强大的 Electron 应用程序开发框架，可以帮助开发者更快速、更简单地创建、构建和打包 Electron 应用程序
 > 在`forge.config.ts`中配置项目
-配置结构：
- ```ts
+> 配置结构：
+
+```ts
 const config: ForgeConfig = {
-  buildIdentifier:{}, // 用于标识构建的唯一标识符，可以在构建过程中使用。
-  rebuildConfig:{},   // 用于配置重新构建的选项，例如重新构建的平台、架构等
-  pluginInterface:{}, // 用于定义插件接口，可以在插件中使用。
-  makers:{},          // 用于配置打包器的选项，例如打包器的类型、输出目录等。
-  packagerConfig:{},  // 用于配置打包器的选项，例如应用程序的名称、版本号、图标等。
-  plugins:{},         // 用于配置插件，例如自动更新插件、调试插件等。
-  hooks:{},           // 用于定义钩子函数，可以在构建过程中执行一些自定义的操作。
-  publishers:{}       // 用于配置发布器，例如将应用程序发布到 GitHub、npm 等平台上。
-}
+  buildIdentifier: {}, // 用于标识构建的唯一标识符，可以在构建过程中使用。
+  rebuildConfig: {}, // 用于配置重新构建的选项，例如重新构建的平台、架构等
+  pluginInterface: {}, // 用于定义插件接口，可以在插件中使用。
+  makers: {}, // 用于配置打包器的选项，例如打包器的类型、输出目录等。
+  packagerConfig: {}, // 用于配置打包器的选项，例如应用程序的名称、版本号、图标等。
+  plugins: {}, // 用于配置插件，例如自动更新插件、调试插件等。
+  hooks: {}, // 用于定义钩子函数，可以在构建过程中执行一些自定义的操作。
+  publishers: {}, // 用于配置发布器，例如将应用程序发布到 GitHub、npm 等平台上。
+};
 ```
+
 ### 配置入口
+
 默认配置是
+
 ```ts
 const config: ForgeConfig = {
   //...
@@ -41,12 +46,12 @@ const config: ForgeConfig = {
           {
             html: './src/main/index.html', // 可以全局的使用declare const MAIN_WINDOW_WEBPACK_ENTRY: string;引入
             js: './src/main/renderer.ts',
-            name: 'main_window', 
+            name: 'main_window',
             preload: {
               js: './src/main/preload.ts', // declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
             },
           },
-          // ... 
+          // ...
           // 这里可以实现多个入口
           {
             html: './src/main/windows/setting/index.html', // 同上
@@ -63,7 +68,9 @@ const config: ForgeConfig = {
   },
 }
 ```
-### 设置assets资源文件
+
+### 设置 assets 资源文件
+
 ```ts
     packagerConfig: {
         extraResource: [ // 打包时文件复制到Resource
@@ -71,8 +78,11 @@ const config: ForgeConfig = {
         ],
     ...
 ```
+
 ### 配置代理和 devContentSecurityPolicy
+
 > 使用到接口出现跨域和安全策略情况影响程序正常运行。同上是在`WebpackPlugin`中配置
+
 ```ts
 const config: ForgeConfig = {
   //...
@@ -99,38 +109,49 @@ mainWindow = new BrowserWindow({
   },
 });
 ```
+
 ### 配置.env
+
 1. 下载`dotenv-webpack 和 dotenv`
-2. 在`webpack.plugins.ts`中peiz
+2. 在`webpack.plugins.ts`中 peiz
+
 ```ts
 // 是electron主进程中可以使用
 dotenv.config({
-  path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`)
-})
+  path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`),
+});
 // 是electron渲染进程 react中可以使用
 export const plugins = [
   new Dotenv({
-    path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`)
+    path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`),
   }),
 ];
 ```
+
 3. 在`package.json`中设置环境变量
+
 ```json
 "start": "cross-env NODE_ENV=development electron-forge start ",
 ```
-### 配置alias "@"
-> 只能在渲染进程react中使用
+
+### 配置 alias "@"
+
+> 只能在渲染进程 react 中使用
+
 1. 在`webpack.renderer.config.ts`配置路径：
+
 ```ts
 export const rendererConfig: Configuration = {
-    resolve: {
-        alias: {
-            '@app': path.resolve(__dirname, 'src/app/'),
-        },
+  resolve: {
+    alias: {
+      '@app': path.resolve(__dirname, 'src/app/'),
     },
+  },
 };
 ```
+
 2. 在`eslintrc.json`中忽略错误
+
 ```json
 {
   // ...
@@ -138,32 +159,33 @@ export const rendererConfig: Configuration = {
     "import/no-unresolved": [
       2,
       {
-        "ignore": [
-          "^@app"
-        ]
+        "ignore": ["^@app"]
       }
     ]
   }
 }
-
 ```
-3. 在`tsconfig.ts`中设置paths
+
+3. 在`tsconfig.ts`中设置 paths
+
 ```json
 {
   "compilerOptions": {
-     // ...
+    // ...
     "paths": {
-      "@app/*": [
-        "src/app/*"
-      ]
+      "@app/*": ["src/app/*"]
     }
   }
 }
 ```
+
 ### 配置响应式
-> 在`webpack.rules.ts`中配置rules规则
+
+> 在`webpack.rules.ts`中配置 rules 规则
+
 1. 下载 `postcss-loader autoprefixer postcss-px-to-viewport`
 2. 配置规则
+
 ```json
 export const rules: Required<ModuleOptions>['rules'] = [
 {
@@ -177,33 +199,40 @@ export const rules: Required<ModuleOptions>['rules'] = [
 },
 ]
 ```
+
 3. 创建`postcss.config.ts`
+
 ```ts
 module.exports = {
-    plugins: [
-        require('autoprefixer'),
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        require('postcss-px-to-viewport')({
-            viewportWidth: 1080,
-            viewportHeight: 860,
-            unitPrecision: 5,
-            viewportUnit: 'vw',
-            selectorBlackList: ['.ignore', '.hairlines'],
-            minPixelValue: 1,
-            mediaQuery: false,
-            propList: ['width', 'height', 'padding', 'margin', 'grid'], // 需要转换的属性
-            removeComments: true, // 删除注释
-            exclude: [/node_modules/]
-        })
-    ]
+  plugins: [
+    require('autoprefixer'),
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    require('postcss-px-to-viewport')({
+      viewportWidth: 1080,
+      viewportHeight: 860,
+      unitPrecision: 5,
+      viewportUnit: 'vw',
+      selectorBlackList: ['.ignore', '.hairlines'],
+      minPixelValue: 1,
+      mediaQuery: false,
+      propList: ['width', 'height', 'padding', 'margin', 'grid'], // 需要转换的属性
+      removeComments: true, // 删除注释
+      exclude: [/node_modules/],
+    }),
+  ],
 };
 ```
 
 ## 打包
-> 打包`forge`有两种选择， 
+
+> 打包`forge`有两种选择，
+
 ### squirrel
+
 > 没有安装界面的， 可以使用一个`gif`来显示安装的过程
+
 1. 配置吗
+
 ```ts
 new MakerWix({
             icon: path.resolve(__dirname, 'assets', 'icons/icon.ico'),
@@ -216,13 +245,18 @@ new MakerWix({
             }
         }),
 ```
+
 ### wix
+
 1. 下载 `@electron-forge/maker-wix` 包
 2. 下载[wix](https://wixtoolset.org/)工具
-  * 添加到系统环境变量 `C:\Program Files (x86)\WiX Toolset v3.11\bin`(默认)
-  * 使用PowerShell超级管理员 进行打包
-> 注意这个安装引导默认是安装在`C:\Program Files (x86)\你的项目`中，没有写入的权限
+
+- 添加到系统环境变量 `C:\Program Files (x86)\WiX Toolset v3.11\bin`(默认)
+- 使用 PowerShell 超级管理员 进行打包
+  > 注意这个安装引导默认是安装在`C:\Program Files (x86)\你的项目`中，没有写入的权限
+
 3. 配置
+
 ```ts
 makers: [
         new MakerSquirrel({
@@ -240,4 +274,5 @@ makers: [
 ```
 
 ### 其它工具
-* 
+
+-

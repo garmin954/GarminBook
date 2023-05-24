@@ -29,6 +29,7 @@ export default defineConfig({
   },
   sass: {}, ///配这里
   themeConfig: {
+    footerConfig:[],
     menu: {
       // 折叠菜单
       collapse: true,
