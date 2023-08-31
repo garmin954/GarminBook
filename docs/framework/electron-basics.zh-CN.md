@@ -88,6 +88,14 @@ if (!gotTheLock) {
 }
 ```
 
+### 设置可拖动区域
+
+```css
+.block {
+  -webkit-app-region: drag; // or  no-drag
+}
+```
+
 ### 设置全局变量
 
 ```ts

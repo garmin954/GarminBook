@@ -1,13 +1,13 @@
 {
   "name": "GarminBook",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A static site based on dumi",
   "license": "MIT",
   "scripts": {
     "build": "dumi build",
     "dev": "dumi dev",
     "prepare": "husky install && dumi setup",
-    "publish": "gh-pages -d dist ",
+    "release": "gh-pages -d dist ",
     "start": "npm run dev"
   },
   "commitlint": {

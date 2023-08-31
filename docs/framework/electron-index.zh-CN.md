@@ -34,6 +34,8 @@ const config: ForgeConfig = {
 
 默认配置是
 
+#### 多个 app
+
 ```ts
 const config: ForgeConfig = {
   //...
@@ -69,10 +71,21 @@ const config: ForgeConfig = {
 }
 ```
 
+#### 单个 app 使用路由
+
+```ts
+if (!app.isPackaged) {
+  await settingWindow.loadURL(`${MAIN_WINDOW_WEBPACK_ENTRY}/#/setting`);
+} else {
+  await settingWindow.loadURL(`${MAIN_WINDOW_WEBPACK_ENTRY}#/setting`);
+}
+```
+
 ### 设置 assets 资源文件
 
 ```ts
     packagerConfig: {
+        asar: true, // 开启asar压缩
         extraResource: [ // 打包时文件复制到Resource
             path.join(__dirname, 'assets'),
         ],
@@ -122,6 +135,9 @@ dotenv.config({
 });
 // 是electron渲染进程 react中可以使用
 export const plugins = [
+  new webpack.DefinePlugin({
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+  }),
   new Dotenv({
     path: path.resolve(__dirname, `.env.${process.env.NODE_ENV}`),
   }),
@@ -225,7 +241,90 @@ module.exports = {
 
 ## 打包
 
-> 打包`forge`有两种选择，
+### 打包命令
+
+#### package
+
+`yarn packge` 打包程序包
+
+#### make
+
+`yarn make` 打包程序安装包
+
+> make 会默认先执行`package` 可以使用`--skip-package` 跳过
+
+### nsis
+
+#### 创建 maker
+
+```ts
+import MakerBase, { MakerOptions } from '@electron-forge/maker-base';
+import { ForgePlatform } from '@electron-forge/shared-types';
+import { buildForge, PackagerOptions } from 'app-builder-lib';
+
+export default class MakerNSIS extends MakerBase<PackagerOptions> {
+  name = 'nsis';
+  defaultPlatforms: ForgePlatform[] = ['win32'];
+  isSupportedOnCurrentPlatform(): boolean {
+    return process.platform === 'win32';
+  }
+  async make(options: MakerOptions): Promise<string[]> {
+    const config: PackagerOptions = {
+      config: {
+        win: {
+          icon: options.forgeConfig.packagerConfig.icon,
+          requestedExecutionLevel: 'highestAvailable',
+        },
+      },
+      ...this.config,
+    };
+    return buildForge(options, {
+      win: [`nsis:${options.targetArch}`],
+      ...config,
+    });
+  }
+}
+
+export { MakerNSIS };
+```
+
+#### `forge.config.ts`中配置
+
+```ts
+    makers: [
+        new MakerNSIS({
+            config: {
+                appId: "UFACTORY-Assistant",
+                nsis: {
+                    "oneClick": false, // 设置为 true 表示启用一键安装模式，设置为 false 表示禁用一键安装模式。
+                    "allowElevation": false, // 设置为 true 表示在安装时提升管理员权限，设置为 false 表示不提升管理员权限。
+                    "perMachine": false, // 设置为 true 表示安装为所有用户，设置为 false 表示安装为当前用户。
+                    "allowToChangeInstallationDirectory": true, // 设置为 true 表示允许用户在安装过程中选择安装目录，设置为 false 表示不允许更改安装目录。
+                    "installerIcon": "assets/icons/icon.ico",
+                    "uninstallerIcon": "assets/icons/icon.ico",
+                    "installerHeaderIcon": "assets/icons/icon.ico",
+                    "createDesktopShortcut": true,
+                    "createStartMenuShortcut": true,
+                    "guid": "C7E2BF9E-59F7-4EF1-BDE7-946ECA6B2793", // 指定安装程序的 GUID（全局唯一标识符），用于在卸载时识别程序。
+                },
+                win: {
+                    target: "nsis",
+                    icon: "assets/icons/icon.ico",
+                    requestedExecutionLevel: "highestAvailable",
+                    // "extraResources": [
+                    //     {
+                    //         "from": "installer.nsh",
+                    //         "to": "."
+                    //     }
+                    // ]
+                },
+                directories: {
+                    "output": "out/make/nsis" // 打包输出的目录
+                },
+                compression: 'maximum'
+            }
+        }),
+```
 
 ### squirrel
 
