@@ -1,5 +1,5 @@
 ---
-title: 基础
+title: 简述
 order: 0
 nav:
   path: /go
