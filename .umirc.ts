@@ -2,6 +2,7 @@ import { defineConfig } from 'dumi';
 import WindiCSSWebpackPlugin from 'windicss-webpack-plugin';
 const repo = 'GarminBook';
 
+// @ts-ignore
 export default defineConfig({
   title: repo,
   favicon:
@@ -21,7 +22,7 @@ export default defineConfig({
       path: 'https://github.com/garmin954/GarminBook',
     },
   ],
-  locales: [['zh-CN', '中文']],
+  locales: [["zh-CN", "中文"]],
   // more config: https://d.umijs.org/config
   chainWebpack(config: any) {
     console.log(config);
