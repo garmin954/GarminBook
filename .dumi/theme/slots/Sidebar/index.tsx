@@ -6,6 +6,7 @@ import {Menu,MenuProps} from  'antd'
 
 import { useSiteStore } from '../../store/useSiteStore';
 import { useStyles } from './style';
+import {useNavigate} from "@@/exports";
 
 const Sidebar: FC = () => {
   const sidebar = useSiteStore((s) => s.sidebar, isEqual);
@@ -43,8 +44,19 @@ const Sidebar: FC = () => {
   //   </div>
   // );
 
+  const navigate = useNavigate()
+  function onClickItem(info:any) {
+    console.log('item, key, keyPath, domEvent')
+    const [_, p,s] = info.key.split("_")
+    // @ts-ignore
+    const {link} = sidebar[p].children[s]
+    console.log(link)
+    navigate(link)
+  }
+
   const menuItems = useMemo<MenuItem[]>(()=>{
     const items:MenuItem[] = []
+    console.log('sidebar', sidebar)
     if (sidebar?.length){
       for (const pi in sidebar){
         const pf = sidebar[pi]
@@ -67,7 +79,9 @@ const Sidebar: FC = () => {
       defaultSelectedKeys={['sub_0_0']}
       defaultOpenKeys={['sub_0']}
       mode="inline"
+      onClick={onClickItem}
       items={menuItems}
+      className={styles.sidebar}
     />
   );
 };
