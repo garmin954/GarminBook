@@ -21,31 +21,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/node/GarminBook/.dumi/theme&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;D:\\node\\GarminBook\\node_modules\\stylelint&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\node\\GarminBook\\node_modules\\prettier&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\node\\GarminBook\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/node/GarminBook/docs/framework",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "D:\\node\\GarminBook\\node_modules\\stylelint",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "D:\\node\\GarminBook\\node_modules\\prettier",
+    "ts.external.directory.path": "D:\\node\\GarminBook\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\node\GarminBook\docs\framework" />
+      <recent name="D:\node\GarminBook\docs\favorites" />
       <recent name="D:\node\GarminBook\.dumi\theme" />
       <recent name="D:\node\GarminBook\dumi\theme-default" />
       <recent name="D:\node\GarminBook\.dumi" />
-      <recent name="D:\node\GarminBook\docs\Go" />
-      <recent name="D:\node\GarminBook\docs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\node\GarminBook\.dumi" />
@@ -75,7 +75,10 @@
       <workItem from="1693476478253" duration="987000" />
       <workItem from="1693478187322" duration="8503000" />
       <workItem from="1693791728295" duration="579000" />
-      <workItem from="1693900505249" duration="1616000" />
+      <workItem from="1693900505249" duration="2237000" />
+      <workItem from="1694413040416" duration="346000" />
+      <workItem from="1694573889677" duration="5000" />
+      <workItem from="1701336575564" duration="733000" />
     </task>
     <servers />
   </component>

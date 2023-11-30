@@ -11,7 +11,12 @@ group:
   order: 50
 ---
 
-##
+## 下载速度
+
+- 先清一下缓存：npm cache clean --force
+- 设置一下镜像源：npm config set registry https://registry.npm.taobao.org
+- 原来没有设置过的，设置镜像地址：npm config set disturl https://npm.taobao.org/dist
+- 设置 electron 镜像：npm config set electron_mirror https://npm.taobao.org/mirrors/electron/
 
 ### 生命周期
 
