@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkGarminBook=self.webpackChunkGarminBook||[]).push([[252],{78658:function(r,o,n){n.r(o);var u=n(97034),t=n(44732),E=n(85893);o.default=function(){var _=(0,u.pC)();return(0,E.jsx)(t.Z,{children:_})}}}]);
