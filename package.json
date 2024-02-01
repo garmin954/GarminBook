@@ -77,6 +77,7 @@
     "eslint-import-resolver-typescript": "^2",
     "father": "^4",
     "father-plugin-dumi-theme": "^1.0.0-rc.1",
+    "gh-pages": "^6.1.0",
     "history": "^5",
     "husky": "^8",
     "jsdom": "^22",

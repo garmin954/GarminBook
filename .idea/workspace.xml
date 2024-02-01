@@ -26,7 +26,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/node/GarminBook/docs/framework",
+    "last_opened_file_path": "D:/node/GarminBook/docs/Go",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -41,11 +41,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\node\GarminBook\docs\Go" />
       <recent name="D:\node\GarminBook\docs\framework" />
       <recent name="D:\node\GarminBook\docs\favorites" />
       <recent name="D:\node\GarminBook\.dumi\theme" />
       <recent name="D:\node\GarminBook\dumi\theme-default" />
-      <recent name="D:\node\GarminBook\.dumi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\node\GarminBook\.dumi" />
@@ -78,7 +78,8 @@
       <workItem from="1693900505249" duration="2237000" />
       <workItem from="1694413040416" duration="346000" />
       <workItem from="1694573889677" duration="5000" />
-      <workItem from="1701336575564" duration="733000" />
+      <workItem from="1701336575564" duration="3602000" />
+      <workItem from="1706757667168" duration="1661000" />
     </task>
     <servers />
   </component>

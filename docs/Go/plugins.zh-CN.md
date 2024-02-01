@@ -7,8 +7,8 @@ nav:
   order: 100
 group:
   path: /go/plugins
-  title: Plugins
-  order: 50
+  title: 包
+  order: 150
 ---
 
 ### air
